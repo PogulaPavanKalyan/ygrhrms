@@ -144,6 +144,19 @@ const Messages = () => {
     }
   }, []);
 
+  const handleCall = async (callType) => {
+    if (!activeDmUser) return;
+    try {
+      await chatApi.initiateCall({
+        receiver: activeDmUser.id,
+        call_type: callType,
+      });
+      alert(`Initiating WebRTC ${callType} connection. Dialing ${activeChatTitle}...`);
+    } catch (err) {
+      alert(err.response?.data?.detail || 'Failed to initiate call session.');
+    }
+  };
+
   useEffect(() => {
     loadSidebar();
     // Mark presence as Online
@@ -1126,6 +1139,35 @@ const Messages = () => {
                     )}
                   </div>
                 </div>
+
+                {activeDmUser && (
+                  <div className="uc-header-actions" style={{ display: 'flex', gap: '10px', marginLeft: 'auto', marginRight: '10px' }}>
+                    <button 
+                      onClick={() => handleCall('audio')} 
+                      style={{
+                        background: '#f1f5f9', border: 'none', borderRadius: '50%', 
+                        width: '36px', height: '36px', display: 'flex', alignItems: 'center', 
+                        justifyContent: 'center', cursor: 'pointer', color: '#475569',
+                        transition: 'background 0.2s'
+                      }}
+                      title="Voice Call"
+                    >
+                      <i className="fa-solid fa-phone"></i>
+                    </button>
+                    <button 
+                      onClick={() => handleCall('video')} 
+                      style={{
+                        background: '#f1f5f9', border: 'none', borderRadius: '50%', 
+                        width: '36px', height: '36px', display: 'flex', alignItems: 'center', 
+                        justifyContent: 'center', cursor: 'pointer', color: '#475569',
+                        transition: 'background 0.2s'
+                      }}
+                      title="Video Call"
+                    >
+                      <i className="fa-solid fa-video"></i>
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* ── Messages Feed ── */}
