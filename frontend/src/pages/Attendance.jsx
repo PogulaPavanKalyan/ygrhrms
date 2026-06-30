@@ -557,7 +557,7 @@ const Attendance = () => {
                   ))}
 
                   {/* Day cells */}
-                  {calendarData?.days && calendarData.days.map((day) => {
+                  {calendarData?.days_data && calendarData.days_data.map((day) => {
                     const statusClass = 
                       day.status === 'Present' ? 'cell-present' :
                       day.status === 'Absent' ? 'cell-absent' :

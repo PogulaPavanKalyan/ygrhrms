@@ -165,12 +165,8 @@ const Sidebar = () => {
             <i className={`fa-solid fa-angle-down ${menus.hrMenu ? 'fa-rotate-180' : ''}`} style={{ marginLeft: 'auto', transition: 'transform 0.2s' }}></i>
           </div>
           <div className={`dropdown ${menus.hrMenu ? 'active' : ''}`}>
-            <NavLink to="/assign-project" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-folder-plus"></i> Assign Project</NavLink>
-            <NavLink to="/reports-submit" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-file-pen"></i> Reports</NavLink>
-            <NavLink to="/reports-list" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-file-invoice"></i> Reports Status</NavLink>
-            <NavLink to="/apply-leave" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-plus"></i> Apply Leave</NavLink>
+            <NavLink to="/leave-status" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-check"></i> Leave Portal</NavLink>
             <NavLink to="/hr-approved-leaves" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-clipboard-check"></i> HR Approved Leaves</NavLink>
-            <NavLink to="/leave-status" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-check"></i> Leave Status</NavLink>
             <NavLink to="/leave-requests" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-minus"></i> All Leave Requests</NavLink>
           </div>
 
@@ -183,7 +179,7 @@ const Sidebar = () => {
             <NavLink to="/monthly-attendance" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-days"></i> Monthly Summary</NavLink>
             <NavLink to="/attendance-correct" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-pen-to-square"></i> Correction (Single)</NavLink>
             <NavLink to="/attendance-correct-bulk" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-layer-group"></i> Correction (Bulk)</NavLink>
-            <NavLink to="/attendance" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-user"></i> My Attendance</NavLink>
+            <NavLink to="/attendance" className={({ isActive }) => isActive ? 'active' : ''}><i className="fa-solid fa-calendar-check"></i> My Attendance</NavLink>
           </div>
 
           <div className="menu-item" onClick={() => toggleMenu('financeMenu')}>
@@ -213,7 +209,7 @@ const Sidebar = () => {
           </NavLink>
           <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-list-check" style={{ color: '#22c55e' }}></i>
-            <span>My Tasks</span>
+            <span>Tasks & Reports</span>
           </NavLink>
         </>
       )}
@@ -225,29 +221,13 @@ const Sidebar = () => {
             <i className="fa-solid fa-users-gear" style={{ color: '#f59e0b' }}></i>
             <span>Teams</span>
           </NavLink>
-          <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-folder-open" style={{ color: '#10b981' }}></i>
-            <span>Projects</span>
-          </NavLink>
-          <NavLink to="/reports-list" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-invoice" style={{ color: '#ec4899' }}></i>
-            <span>Reports Status</span>
-          </NavLink>
-          <NavLink to="/reports-submit" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-pen" style={{ color: '#8b5cf6' }}></i>
-            <span>Report</span>
-          </NavLink>
           <NavLink to="/employees" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-users" style={{ color: '#14b8a6' }}></i>
             <span>Employees</span>
           </NavLink>
-          <NavLink to="/apply-leave" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-plus" style={{ color: '#22c55e' }}></i>
-            <span>Apply Leaves</span>
-          </NavLink>
           <NavLink to="/leave-status" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-calendar-check" style={{ color: '#6366f1' }}></i>
-            <span>Leave Status</span>
+            <span>Leave Portal</span>
           </NavLink>
           <NavLink to="/manager-approved-leaves" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-clipboard-check" style={{ color: '#eab308' }}></i>
@@ -259,7 +239,7 @@ const Sidebar = () => {
           </NavLink>
           <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-list-check" style={{ color: '#a855f7' }}></i>
-            <span>My Tasks</span>
+            <span>Tasks & Reports</span>
           </NavLink>
           <NavLink to="/attendance-list" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-calendar-check" style={{ color: '#eab308' }}></i>
@@ -270,7 +250,7 @@ const Sidebar = () => {
             <span>My Profile</span>
           </NavLink>
           <NavLink to="/attendance" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-user" style={{ color: '#06b6d4' }}></i>
+            <i className="fa-solid fa-calendar-check" style={{ color: '#06b6d4' }}></i>
             <span>My Attendance</span>
           </NavLink>
           <NavLink to="/payslips" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -288,7 +268,7 @@ const Sidebar = () => {
             <span>My Profile</span>
           </NavLink>
           <NavLink to="/attendance" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-user" style={{ color: '#06b6d4' }}></i>
+            <i className="fa-solid fa-calendar-check" style={{ color: '#06b6d4' }}></i>
             <span>My Attendance</span>
           </NavLink>
           <NavLink to="/attendance-list" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -305,23 +285,7 @@ const Sidebar = () => {
           </NavLink>
           <NavLink to="/leave-status" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-calendar-check" style={{ color: '#6366f1' }}></i>
-            <span>Leave Summary</span>
-          </NavLink>
-          <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-folder" style={{ color: '#f59e0b' }}></i>
-            <span>Projects</span>
-          </NavLink>
-          <NavLink to="/assign-task" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-circle-plus" style={{ color: '#10b981' }}></i>
-            <span>Assign Task</span>
-          </NavLink>
-          <NavLink to="/employees" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-users" style={{ color: '#ec4899' }}></i>
-            <span>Employees</span>
-          </NavLink>
-          <NavLink to="/apply-leave" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-plus" style={{ color: '#8b5cf6' }}></i>
-            <span>Apply Leave</span>
+            <span>Leave Portal</span>
           </NavLink>
           <NavLink to="/tl-approved-leaves" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-clipboard-check" style={{ color: '#14b8a6' }}></i>
@@ -331,17 +295,9 @@ const Sidebar = () => {
             <i className="fa-solid fa-calendar-minus" style={{ color: '#f43f5e' }}></i>
             <span>Employee Leaves</span>
           </NavLink>
-          <NavLink to="/reports-submit" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-pen" style={{ color: '#eab308' }}></i>
-            <span>Employee Update</span>
-          </NavLink>
-          <NavLink to="/reports-list" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-invoice" style={{ color: '#a855f7' }}></i>
-            <span>Reports Status</span>
-          </NavLink>
           <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-list-check" style={{ color: '#22c55e' }}></i>
-            <span>My Tasks</span>
+            <span>Tasks & Reports</span>
           </NavLink>
         </>
       )}
@@ -354,7 +310,7 @@ const Sidebar = () => {
             <span>My Profile</span>
           </NavLink>
           <NavLink to="/attendance" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-user" style={{ color: '#06b6d4' }}></i>
+            <i className="fa-solid fa-calendar-check" style={{ color: '#06b6d4' }}></i>
             <span>My Attendance</span>
           </NavLink>
           <NavLink to="/payslips" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -367,23 +323,11 @@ const Sidebar = () => {
           </NavLink>
           <NavLink to="/leave-status" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-calendar-check" style={{ color: '#6366f1' }}></i>
-            <span>Leave Summary</span>
-          </NavLink>
-          <NavLink to="/apply-leave" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-calendar-plus" style={{ color: '#8b5cf6' }}></i>
-            <span>Apply Leave</span>
-          </NavLink>
-          <NavLink to="/reports-submit" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-pen" style={{ color: '#eab308' }}></i>
-            <span>Update Update</span>
-          </NavLink>
-          <NavLink to="/reports-list" className={({ isActive }) => isActive ? 'active' : ''}>
-            <i className="fa-solid fa-file-invoice" style={{ color: '#a855f7' }}></i>
-            <span>Report Status</span>
+            <span>Leave Portal</span>
           </NavLink>
           <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
             <i className="fa-solid fa-list-check" style={{ color: '#22c55e' }}></i>
-            <span>My Tasks</span>
+            <span>Tasks & Reports</span>
           </NavLink>
         </>
       )}
